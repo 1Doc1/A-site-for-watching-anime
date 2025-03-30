@@ -1,14 +1,15 @@
-html {
-  width: 100%;
-  height: 100%;
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   width: 100%;
   height: 100%;
   background-color: #ccc;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   box-sizing: border-box;
 }
 
@@ -33,7 +34,6 @@ body {
 }
 
 .hidden {
-  display: none !important;
   cursor: none;
 }
 
@@ -67,6 +67,75 @@ body {
 .player__video {
   height: 100%;
   vertical-align: middle;
+}
+
+/* Double tap areas */
+.double-tap-area {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25%;
+  height: 50%;
+  z-index: 10;
+  display: none;
+}
+
+.touch .double-tap-area {
+  display: block;
+}
+
+.double-tap-area.left {
+  left: 0;
+}
+
+.double-tap-area.right {
+  right: 0;
+}
+
+.double-tap-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.double-tap-indicator.active {
+  opacity: 1;
+  animation: pulse 0.3s ease-out;
+}
+
+.double-tap-indicator.left {
+  left: 50%;
+}
+
+.double-tap-indicator.right {
+  left: 50%;
+}
+
+.double-tap-indicator span {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .player__ui {
@@ -290,10 +359,6 @@ body {
 
 .icon__pause {
   background-position: -28px 0;
-}
-
-.icon__backward {
-  background-position: -56px 0;
 }
 
 .icon__backward {
