@@ -59,6 +59,37 @@ const playlistSeries = player.querySelector('.player__playlist')
 
 const headTitle = document.head.querySelector('title')
 
+// Double tap areas
+const leftTapArea = player.querySelector('.double-tap-area.left')
+const rightTapArea = player.querySelector('.double-tap-area.right')
+const leftIndicator = player.querySelector('.double-tap-indicator.left')
+const rightIndicator = player.querySelector('.double-tap-indicator.right')
+
+let lastTapTime = 0
+const DOUBLE_TAP_DELAY = 300
+const SEEK_TIME = 10
+
+function handleDoubleTap(direction) {
+  const currentTime = Date.now()
+  const tapLength = currentTime - lastTapTime
+
+  if (tapLength < DOUBLE_TAP_DELAY) {
+    if (direction === 'left') {
+      video.currentTime = Math.max(0, video.currentTime - SEEK_TIME)
+      leftIndicator.classList.add('active')
+      setTimeout(() => leftIndicator.classList.remove('active'), 300)
+    } else {
+      video.currentTime = Math.min(video.duration, video.currentTime + SEEK_TIME)
+      rightIndicator.classList.add('active')
+      setTimeout(() => rightIndicator.classList.remove('active'), 300)
+    }
+  }
+  lastTapTime = currentTime
+}
+
+leftTapArea.addEventListener('touchstart', () => handleDoubleTap('left'))
+rightTapArea.addEventListener('touchstart', () => handleDoubleTap('right'))
+
 const keyBinding = {
   'KeyI': function()
   {
