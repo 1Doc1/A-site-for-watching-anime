@@ -1,19 +1,19 @@
 # A-site-for-watching-anime
 
-**Важливо:** Цей сайт не є моєю оригінальною розробкою. Я лише покращив його дизайн та додав деякі нові функції. Оригінальна версія була створена [Damasutsu](https://github.com/Damasutsu).
+**Important:** This site is not my original creation. I have only improved its design and added some new features. The original version was created by [Damasutsu](https://github.com/Damasutsu).
 
-**Інструкції по запуску (для розробників):**
+**Instructions for Running (for developers):**
 
-У терміналі вашої програми (наприклад, VS Code) виконайте наступні команди:
+In your program's terminal (for example, VS Code), execute the following commands:
 
-1.  **Установка залежностей:**
+1.  **Install Dependencies:**
     ```
     npm install
     ```
-    Ця команда завантажить всі необхідні для роботи проекту бібліотеки та пакети.
+    This command will download all the necessary libraries and packages for the project to work.
 
-2.  **Запуск режиму розробки:**
+2.  **Run Development Mode:**
     ```
     npm run dev
     ```
-    Після успішної установки залежностей ця команда запустить локальний сервер розробки, і ви зможете побачити сайт у своєму браузері.
+    After the dependencies are successfully installed, this command will start a local development server, and you will be able to see the site in your browser.
