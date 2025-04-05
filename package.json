@@ -1,0 +1,17 @@
+{
+  "name": "anime-watch",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.0.8",
+    "vite": "^4.5.0",
+    "axios": "^1.6.2",
+    "lodash-es": "^4.17.21"
+  }
+}
