@@ -4,27 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#1a1b26">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/animevost-player/favicon-32x32.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon-32x32.png">
     <title>AnimeWatch - Поиск аниме</title>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1 class="logo">Anime<span>Watch</span></h1>
-            <input type="search" class="search__input" placeholder="Поиск аниме...">
+            <a href="/" class="logo">Anime<span>Watch</span></a>
+            <div class="search-container">
+                <input type="search" class="search__input" placeholder="Поиск аниме...">
+            </div>
         </header>
+
+        <div class="recently-watched">
+            <h2 class="section-title">Недавно просмотренное</h2>
+            <div class="recently-watched__container">
+                <div class="recently-watched__scroll">
+                    <div class="recently-watched__grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommendations">
+            <h2 class="section-title">Топ 10 аниме</h2>
+            <div class="recommendations__grid"></div>
+        </div>
 
         <div class="results">
             <div class="results__anime"></div>
             <div class="results__404 hidden">
                 <span class="results__404--title">404</span>
                 <span class="results__404--subtitle">Ничего не найдено</span>
+                <button class="back-button">
+                    <span class="back-icon">←</span>
+                    Вернуться к рекомендациям
+                </button>
             </div>
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
